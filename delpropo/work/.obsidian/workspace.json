@@ -13,31 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20250910d.md",
+                "file": "AI/docs/llm_info.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20250910d"
+              "title": "llm_info"
             }
-          }
-        ]
-      },
-      {
-        "id": "cd7b81a96d71b123",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "a1c35ac866bc64a0",
+            "id": "4d88a4a64682e721",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "AI/docs/Considerations.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Considerations"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -186,10 +185,18 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f1cf781352b00548",
+  "active": "4d88a4a64682e721",
   "lastOpenFiles": [
-    "Welcome.md",
+    "AI/docs/llm_info.md",
+    "AI/docs/Considerations.md",
+    "AI/docs/transition_plan.md",
+    "AI/docs/mercury_shell_scripting.md",
+    "AI/docs/file_location_yaml_prompt.md",
+    "AI/README.md",
+    "AI/check.md",
     "20250910d.md",
+    "AI",
+    "Welcome.md",
     "Daily/20250910c.md",
     "NOTE_TEMPLATE.md",
     "Daily/20250910b.md",

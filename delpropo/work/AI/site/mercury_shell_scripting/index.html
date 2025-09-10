@@ -1,0 +1,964 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://delpropo.github.io/obsidian/mercury_shell_scripting/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Mercury shell scripting - AI Information</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#all-dti-data-are-located-in-the-following-location-in-mercury-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Information" class="md-header__button md-logo" aria-label="AI Information" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Information
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mercury shell scripting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/delpropo/obsidian" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    delpropo/obsidian
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Information" class="md-nav__button md-logo" aria-label="AI Information" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Information
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/delpropo/obsidian" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    delpropo/obsidian
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Mercury shell scripting</h1>
+
+<p>Hello - made some changes - commit 2</p>
+<p>## Housekeeping information</p>
+<h4 id="all-dti-data-are-located-in-the-following-location-in-mercury-server">All DTI data are located in the following location in Mercury Server.</h4>
+<div class="highlight"><pre><span></span><code>nfs/corenfs/psych-mercury-data/Data/DTI/SubjectID
+</code></pre></div>
+<h4 id="subjectid-provides-information-about-the-cohort-and-visit">SubjectID provides information about the cohort and visit.</h4>
+<div class="highlight"><pre><span></span><code>NF102_2
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Notation</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N</td>
+<td>Non-stuttering</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Female</td>
+</tr>
+<tr>
+<td>10X</td>
+<td>Cohort 1</td>
+</tr>
+<tr>
+<td>SubjectID</td>
+<td>102</td>
+</tr>
+<tr>
+<td>Visit Number</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="each-participant-data-folder-contains-the-following-files">Each participant data folder contains the following files.</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Description</strong></th>
+<th><strong>Files</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>anatomical images</td>
+<td>adc.nii, ad.nii, anat.nii, anat_orig.nii.gz</td>
+</tr>
+<tr>
+<td>Output folders from Freesurfer</td>
+<td>report, misc, surf, mri</td>
+</tr>
+<tr>
+<td>Secondary outputs</td>
+<td>fa.nii, rd.nii</td>
+</tr>
+<tr>
+<td>Normalized secondary outputs</td>
+<td>wadc.nii, wad.nii, wanat.nii, wb0.nii, wfa.nii, wFA_skeleton.nii<br>,rd.nii</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>b0_brain_mask.nii.gz, b0_brain.nii.gz, b0.nii, data.nii</td>
+</tr>
+<tr>
+<td>DTI data</td>
+<td>dti.nii</td>
+</tr>
+<tr>
+<td>Eddy correction outputs</td>
+<td>tmp.eddy.nii.eddy_command_txt, tmp.eddy.nii.eddy_movement_rms, tmp.eddy.nii.eddy_outlier_map, tmp.eddy.nii.eddy_outlier_n_sqr_stdev_map, tmp.eddy.nii.eddy_outlier_n_stdev_map, tmp.eddy.nii.eddy_outlier_report, tmp.eddy.nii.eddy_parameters, tmp.eddy.nii.eddy_post_eddy_shell_alignment_parameters, tmp.eddy.nii.eddy_post_eddy_shell_PE_translation_parameters, tmp.eddy.nii.eddy_restricted_movement_rms, tmp.eddy.nii.eddy_rotated_bvecs, tmp.eddy.nii.eddy_values_of_all_input_parameters, tmp.eddy.nii.gz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dti-csd-workflow">DTI CSD workflow</h2>
+<h4 id="load-all-required-modules">Load all required modules</h4>
+<div class="highlight"><pre><span></span><code>module load mrtrix
+module load fsl
+module load ANTs
+module load freesurfer
+</code></pre></div>
+<h3 id="preprocessing-steps">Preprocessing Steps</h3>
+<h4 id="step-1-file-type-conversion">Step 1 : File type conversion</h4>
+<p>*Note: there is a common <code>bval</code> and <code>bvec</code> file set for each cohort. Copied that from subject folder level to each subject folder. </p>
+<div class="highlight"><pre><span></span><code>DTISourceFolder=&quot;/nfs/corenfs/psych-mercury-data/Data/DTI&quot;
+
+cp $DTISourceFolder/bvals Cohort1SubjectID/CohortSubjectID.bvals
+cp $DTISourceFolder/bvecs Cohort1SubjectID/CohortSubjectID.bvec
+</code></pre></div>
+<p>Combine raw diffusion data with <code>bval</code> and <code>bvec</code> files to use in future preprocessing steps.</p>
+<div class="highlight"><pre><span></span><code>mrconvert dti.nii SubID_dwi.mif -fslgrad SubID.bvecs SubID.bvals
+</code></pre></div>
+<p>Checking generated MRtrix Image file (<code>mif</code>)  --&gt; <mark>Quality Check 1</mark> </p>
+<div class="highlight"><pre><span></span><code>mrinfo SubID_dwi.mif
+</code></pre></div>
+<p><em>The output contains several pieces of information, such as the dimensions of the dataset and the voxel size, along with the commands that were used to generate the current file. Note that, since this is a 4-dimensional dataset, the last dimension is </em><em>time</em>*; in other words, this file contains 26 volumes, each one with dimensions of 128x128x48 voxels. The last dimension of the <code>Voxel size</code> field - which in this case has a value of 13.7 - indicates the time it took to acquire each volume. This time is also called the repetition time, or TR. </p>
+<p>![[Pasted image 20240419105219.png]]</p>
+<div class="highlight"><pre><span></span><code>mrinfo -size SubID_dwi.mif | awk &#39;{print $4}&#39;
+</code></pre></div>
+<p>*Note: The number in the 4th field of the dimensions header that corresponds to the number of time-points, or volumes, in the dataset. We then compare this with the number of bvals and bvecs by using awk to count the number of columns in each text file:</p>
+<div class="highlight"><pre><span></span><code>awk &#39;{print NF; exit}&#39; SubID.bvecs
+awk &#39;{print NF; exit}&#39; SubID.bvals
+cat SubID.bvals
+cat SubID.bvecs
+</code></pre></div>
+<h4 id="step-2-initial-preprocessing-noise-removal">Step 2: Initial preprocessing (noise removal)</h4>
+<div class="highlight"><pre><span></span><code>dwidenoise SubID_dwi.mif SubID_dwi_den.mif -noise SubID_dwi_noise.mif 
+mrcalc SubID_dwi.mif SubID_dwi_den.mif -subtract SubID_dwi_residual.mif
+</code></pre></div>
+<p>Checking generated MRtrix Image file (<code>mif</code>)  --&gt; <mark>Quality Check 2</mark> </p>
+<p>*One quality check is to see whether the residuals load onto any part of the anatomy. If they do, that may indicate that the brain region is disproportionately affected by some kind of artifact or distortion. </p>
+<div class="highlight"><pre><span></span><code>mrview subID_dwi_residual.mif
+</code></pre></div>
+<p>![[Pasted image 20240418173006.png]]
+*It is common to see a grey outline of the brain, as in the figure above. However, everything within the grey matter and white matter should be relatively uniform and blurry; if you see any clear anatomical landmarks, such as individual gyri or sulci, that may indicate that those parts of the brain have been corrupted by noise. If that happens, you can increase the extent of the denoising filter from the default of 5 to a larger number, such as 7; e.g.,</p>
+<div class="highlight"><pre><span></span><code>dwidenoise your_data.mif your_data_denoised_7extent.mif -extent 7 -noise noise.mif
+</code></pre></div>
+<ul>
+<li>NOTE: We are not doing Gibbs ringing artifact removal (It was not a general issue for this dataset) OR Extracting the Reverse Phase-Encoded Images (because we do not have two encoding directions for this dataset)</li>
+</ul>
+<h4 id="step-3-putting-it-all-together-preprocessing-with-dwipreproc">Step 3: Putting it all together --&gt; preprocessing with dwipreproc</h4>
+<p>FSL commands are run so we will need to load module FSL</p>
+<div class="highlight"><pre><span></span><code>module load fsl
+dwifslpreproc subID_dwi_den.mif subID_dwi_den_preproc.mif -nocleanup -pe_dir PA -rpe_none -eddy_options &quot; --slm=linear&quot;
+</code></pre></div>
+<p>The first arguments are the input and output; the second option, <code>-nocleanup</code>, will keep the temporary processing folder which contains a few files we will examine later. <code>-pe_dir AP</code> signalizes that the primary phase-encoding direction is anterior-to-posterior, and <code>-rpe_pair</code> combined with the <code>-se_epi</code> options indicates that the following input file (i.e., “b0_pair.mif”) is a pair of spin-echo images that were acquired with reverse phase-encoding directions. Lastly, <code>-eddy_options</code> specifies options that are specific to the FSL command <code>eddy</code>. You can visit the <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide">eddy user guide</a> for more options and details about what they do. For now, we will only use the options <code>--slm=linear</code> (which can be useful for data that was acquired with less than 60 directions) and <code>--data_is_shelled</code> (which indicates that the diffusion data was acquired with multiple b-values).</p>
+<p>This command can takes roughly 2 hours. When it has finished, examine the output to see how eddy current correction and unwarping have changed the data; ideally, you should see more signal restored in regions such as the orbitofrontal cortex, which is particularly susceptible to signal dropout:</p>
+<div class="highlight"><pre><span></span><code>mrview subID_dwi_den_preproc.mif -overlay.load SubID_dwi.mif
+</code></pre></div>
+<p>This command will display the newly preprocessed data, with the original diffusion data overlaid on top of it and colored in red. To see how the eddy currents were unwarped, open the Overlays tab and click on the box next to the image <code>subID_dwi.mif</code>. You should see a noticeable difference between the two images, especially in the frontal lobes of the brain near the eyes, which are most susceptible to eddy currents.</p>
+<h4 id="step-4-checking-for-corrupt-slices-quality-check-3">Step 4: Checking for corrupt slices  --&gt; <mark>Quality Check 3</mark></h4>
+<p>One of the options in the <code>dwifslpreproc</code> command, “-nocleanup”, retained a directory with the string “tmp” in its title. Within this folder is a file called <code>dwi_post_eddy.eddy_outlier_map</code>, which contains strings of 0’s and 1’s. Each 1 represents a slice that is an outlier, either because of too much motion, eddy currents, or something else.</p>
+<p>The following code, run from the <code>dwi</code> directory, will navigate into the “tmp” folder and calculate the percentage of outlier slices:</p>
+<div class="highlight"><pre><span></span><code>cd dwifslpreproc-tmp-*
+totalSlices=`mrinfo dwi.mif | grep Dimensions | awk &#39;{print $6 * $8}&#39;`
+totalOutliers=`awk &#39;{ for(i=1;i&lt;=NF;i++)sum+=$i } END { print sum }&#39; dwi_post_eddy.eddy_outlier_map`
+echo &quot;If the following number is greater than 10, you may have to discard this subject because of too much motion or corrupted slices&quot;
+echo &quot;scale=5; ($totalOutliers / $totalSlices * 100)/1&quot; | bc | tee percentageOutliers.txt
+cd ..
+</code></pre></div>
+<h4 id="step-5-generating-a-mask">Step 5: Generating a Mask</h4>
+<p>Create a mask to restrict your analysis only to brain voxels; this will speed up the rest of your analyses.</p>
+<p>To do that, it can be useful to run a command beforehand called <code>dwibiascorrect</code>. This can remove inhomogeneities detected in the data that can lead to a better mask estimation. However, it can in some cases lead to a worse estimation; as with all of the preprocessing steps, you should check it before and after each step:</p>
+<div class="highlight"><pre><span></span><code>module load ANTs
+dwibiascorrect ants subID_dwi_den_preproc.mif subID_den_preproc_unbiased.mif -bias bias.mif
+</code></pre></div>
+<p>You are now ready to create the mask with <code>dwi2mask</code>, which will restrict your analysis to voxels that are located within the brain:</p>
+<div class="highlight"><pre><span></span><code>dwi2mask subID_den_preproc_unbiased.mif mask.mif
+</code></pre></div>
+<p>OR force overwrite mask.mif that already exist</p>
+<div class="highlight"><pre><span></span><code>dwi2mask -force subID_den_preproc_unbiased.mif mask.mif
+</code></pre></div>
+<p>Check the output of this command by typing:</p>
+<div class="highlight"><pre><span></span><code>mrview mask.mif
+</code></pre></div>
+<p>Make sure the mask does not have any holes! Fix the holes with following commands, if there are any.</p>
+<div class="highlight"><pre><span></span><code>mrconvert subID_den_preproc_unbiased.mif subID_unbiased.nii
+bet2 subID_unbiased.nii subID_masked -m -f 0.2
+mrconvert subID_masked_mask.nii.gz mask_new.mif
+</code></pre></div>
+<h3 id="constrained-spherical-deconvolution-analysis">Constrained Spherical Deconvolution Analysis</h3>
+<h4 id="step-1-fiber-orientation-distribution">Step 1 : Fiber Orientation Distribution</h4>
+<h5 id="response-function-estimation-estimate-different-response-functions-for-different-tissue-types-wm-gm-csf">Response function estimation : Estimate different response functions for different tissue types (WM, GM, CSF)</h5>
+<p>In order to generate streamlines, first we need to estimate the orientation of fiber(s) in each voxel. We do this using Constrained Spherical Deconvolution (CSD; Tournier et al., 2004, 2007), instead with the tensor model, which was shown to outperform the performance of DTI in regions of crossing/kissing fibers (Farquharson et al., 2013). To perform CSD&lt; response function (RF) is necessary, which is used as a kernal for deconvolution. </p>
+<p>As many voxels contain both white and grey matter, or white matter and CSF (partial volumes), CSD is flawed in such voxels. We can improve our results by estimating different RFs for different tissue types. (i.e., The RF in white matter models the signal which is expected if there was only a fiber bundle with one coherent orientation present in a voxel). </p>
+<p>The RF generation is best done with DW data with different b-values as different b values are sensitive to different tissue types. This idea is at the core of multi-shell multi-tissue CSD (MSMT; Jeurissen et al., 2014). Our dataset has two b values (0 and 1000). Thus we can attempt this. However, as there are only two b values, we are only going to get RF for two tissue types (WM, and GM). This is a limitation as we do not model CSF well.</p>
+<p>However, the code requires that a csf output is provided --&gt; thus we left  the csf.txt output in the command. </p>
+<div class="highlight"><pre><span></span><code>dwi2response dhollander subID_dwi_den_preproc.mif -voxels voxels.mif wm.txt gm.txt csf.txt
+</code></pre></div>
+<p>This dataset can be viewed by typing the following:</p>
+<div class="highlight"><pre><span></span><code>mrview subID_dwi_den_preproc_unbiased.mif -overlay.load voxels.mif
+</code></pre></div>
+<p>The output from the <code>dwi2response</code> command, showing which voxels were used to construct a basis function for each tissue type. Red: CSF voxels; Green: Grey Matter voxels; Blue: White Matter voxels. Make sure that these colors are located where they should be; for example, the red voxels should be within the ventricles.</p>
+<p>You can then check the response function for each tissue type by typing:</p>
+<div class="highlight"><pre><span></span><code>shview wm.txt
+shview gm.txt
+shview csf.txt
+</code></pre></div>
+<p>Now we are ready do run the FOD analysis</p>
+<div class="highlight"><pre><span></span><code>dwi2fod msmt_csd subID_den_preproc.mif -mask mask.mif wm.txt wmfod.mif gm.txt gmfod.mif csf.txt csffod.mif
+mrconvert -coord 3 0 wmfod.mif - | mrcat csffod.mif gmfod.mif - vf.mif
+mrview vf.mif -odf.load_sh wmfod.mif
+</code></pre></div>
+<p>Also trying single shell approach --&gt; This commands takes a while at the 3 iterations. SO be patient.</p>
+<div class="highlight"><pre><span></span><code>module load mrtrix/tissue
+
+ss3t_csd_beta1 sub-01_den_preproc_unbiased.mif wm.txt wmfod.mif gm.txt gmfod.mif csf.txt csffod.mif -mask mask.mif
+</code></pre></div>
+<p>Example: </p>
+<div class="highlight"><pre><span></span><code>ss3t_csd_beta1 NF130_1_den_preproc_unbiased.mif wm.txt wmfod_ss3t.mif gm.txt gmfod_ss3t.mif csf.txt csffod_ss3t.mif -mask mask.mif
+
+mrconvert -coord 3 0 wmfod_ss3t.mif - | mrcat csffod_ss3t.mif gmfod_ss3t.mif - vf_ss3t.mif
+
+
+mrview vf_ss3t.mif -odf.load_sh wmfod_ss3t.mif
+</code></pre></div>
+<p>SS3T version is only slightly different from MSMT approach (but you can see more green - csf areas)--&gt; MSMT approach with CSF tissue ditched is very sparse and possibly leads to reduced number of fiber tracks at streamline step we noted earlier. Here is a comparison. SS3T vs MSMT (without CSF) vs MSMT (with CSF)</p>
+<p>![[Pasted image 20240419152546.png]]</p>
+<h4 id="normalization">Normalization</h4>
+<p>Later on, for group-level analysis with the data that has been generated for each subject., we will need to <strong>normalize</strong> the FODs. This ensures that any differences we see are not due to intensity differences in the image, similar to how we correct for the size of the brain when comparing volumetric differences across subjects.</p>
+<p>To normalize the data, we will use the <code>mtnormalise</code> command. This requires an input and output for each tissue type, as well as a mask to restrict the analysis to brain voxels:</p>
+<div class="highlight"><pre><span></span><code>mtnormalise wmfod.mif wmfod_norm.mif gmfod.mif gmfod_norm.mif csffod.mif csffod_norm.mif -mask mask.mif
+</code></pre></div>
+<p>Noted that we get an error when trying with MSMT approach with csf.txt</p>
+<p>![[Pasted image 20240419152000.png]]
+Thus, switching to SS3T method output FODs:</p>
+<div class="highlight"><pre><span></span><code>mtnormalise wmfod_ss3t.mif wmfod__ss3t_norm.mif gmfod_ss3t.mif gmfod_ss3t_norm.mif csffod_ss3t.mif csffod_ss3t_norm.mif -mask mask.mif
+</code></pre></div>
+<h3 id="generating-tissue-boundaries">Generating Tissue boundaries</h3>
+<p>For streamline analysis, <strong>seeds</strong> will be placed at random locations along the boundary between the grey matter and the white matter. A streamline will grow from each seed and trace a path from that seed region until it terminates in another region. Some of the streamlines will terminate in places that don’t make sense - for example, a streamline may terminate at the border of the ventricles. We will cull these “error” streamlines, and be left with a majority of streamlines that appear to connect distant grey matter regions.</p>
+<p>To do this, we will first need to create a <strong>boundary</strong> between the grey matter and the white matter. The MRtrix command <code>5ttgen</code> will use FSL’s FAST, along with other commands, to segment the anatomical image into five tissue types:</p>
+<div class="highlight"><pre><span></span><code>1. Grey Matter;
+2. Subcortical Grey Matter (such as the amygdala and basal ganglia);
+3. White Matter;
+4. Cerebrospinal Fluid; and
+5. Pathological Tissue.
+</code></pre></div>
+<p>Once we have segmented the brain into those tissue classes, we can then use the boundary as a mask to restrict where we will place our seeds.</p>
+<h4 id="step-1-convert-anatomical-image-to-mrtrix-format">Step 1 : Convert anatomical image to MRtrix format</h4>
+<p>the anatomical image is present in each subject folder as <code>anat_orig.nii.gz</code> --&gt; we will make a copy as <code>T1.ni.gz</code> --&gt; unzip it (<code>TI.nii</code>) and convert it to <code>T1.mif</code> </p>
+<div class="highlight"><pre><span></span><code>cp anat_orig.nii.gz T1.nii.gz
+gzip -d T1.nii.gz
+mrconvert T1.nii T1.mif
+</code></pre></div>
+<h4 id="step-2-segmenting-to-tissue-types">Step 2: Segmenting to tissue types</h4>
+<p>We will now use the command <code>5ttgen</code> to segment the anatomical image into the tissue types listed above: (~15 mins)</p>
+<div class="highlight"><pre><span></span><code>5ttgen fsl T1.mif 5tt_nocoreg.mif
+mrview 5tt_nocoreg.mif
+</code></pre></div>
+<p>If the segmentation has finished successfully, you should see the following images when you type <code>mrview 5tt_nocoreg.mif</code> (pressing the left and right arrow keys scrolls through the different tissue types): We only see four types - not five. The final volume will be blank as we do not have pathological Tissue.</p>
+<p>![[Pasted image 20240419161022.png]]</p>
+<h3 id="co-registering-the-diffusion-and-anatomical-images">Co-registering the Diffusion and Anatomical Images</h3>
+<p>Next step is to co-register the anatomical and diffusion-weighted images. This ensures that the boundaries of the tissue types are aligned with the boundaries of the diffusion-weighted images; even small differences in the location of the two scans can throw off the tractography results.</p>
+<p>We will first use the commands <code>dwiextract</code> and <code>mrmath</code> to average together the B0 images from the diffusion data. These are the images that look most like T2-weighted functional scans, since a diffusion gradient wasn’t applied during their acquisition - in other words, they were acquired with a b-value of zero. </p>
+<div class="highlight"><pre><span></span><code>dwiextract subID_den_preproc_unbiased.mif - -bzero | mrmath - mean mean_b0.mif -axis 3
+</code></pre></div>
+<p>There are two parts to this command, separated by a pipe (”<code>|</code>”). The left half of the command, <code>dwiextract</code>, takes the preprocessed diffusion-weighted image as an input, and the <code>-bzero</code> option extracts the B0 images; the solitary <code>-</code> argument indicates that the output should be used as input for the second part of the command, to the right of the pipe. <code>mrmath</code> then takes these output B0 images and computes the mean along the 3rd axis, or the time dimension. In other words, if we start with an index of 0, then the number 3 indicates the 4th dimension, which simply means to average over all of the volumes.</p>
+<p>In order to carry out the coregistration between the diffusion and anatomical images, we will need to take a brief detour outside of MRtrix. The software package doesn’t have a coregistration command in its library, so we will need to use another software package’s commands instead. Although you can choose any one you want, we will focus here on FSL’s <code>flirt</code> command.</p>
+<p>The first step is to convert both the segmented anatomical image and the B0 images we just extracted:</p>
+<div class="highlight"><pre><span></span><code>mrconvert mean_b0.mif mean_b0.nii.gz
+mrconvert 5tt_nocoreg.mif 5tt_nocoreg.nii.gz
+</code></pre></div>
+<p>Since <code>flirt</code> can only work with a single 3D image (not 4D datasets), we will use <code>fslroi</code> to extract the first volume of the segmented dataset, which corresponds to the Grey Matter segmentation:</p>
+<div class="highlight"><pre><span></span><code>fslroi 5tt_nocoreg.nii.gz 5tt_vol0.nii.gz 0 1
+</code></pre></div>
+<p>We then use the <code>flirt</code> command to coregister the two datasets:</p>
+<div class="highlight"><pre><span></span><code>flirt -in mean_b0.nii.gz -ref 5tt_vol0.nii.gz -interp nearestneighbour -dof 6 -omat diff2struct_fsl.mat
+</code></pre></div>
+<p>This command uses the grey matter segmentation (i.e., “5tt_vol0.nii.gz”) as the reference image, meaning that it stays stationary. The averaged B0 images are then moved to find the best fit with the grey matter segmentation. The output of this command, “diff2struct_fsl.mat”, contains the <strong>transformation matrix</strong> that was used to overlay the diffusion image on top of the grey matter segmentation.</p>
+<p>Now that we have generated our transformation matrix, we will need to convert it into a format that can be read by MRtrix. That is, we are now ready to travel back into MRtrix after briefly stepping outside of it. The command <code>transformconvert</code> does this:</p>
+<div class="highlight"><pre><span></span><code>transformconvert diff2struct_fsl.mat mean_b0.nii.gz 5tt_nocoreg.nii.gz flirt_import diff2struct_mrtrix.txt
+</code></pre></div>
+<p>Note that the above steps used the anatomical segmentation as the reference image. We did this because usually the coregistration is more accurate if the reference image has higher spatial resolution and sharper distinction between the tissue types. However, we also want to introduce as few edits and interpolations to the functional data as possible during preprocessing. Therefore, since we already have the steps to transform the diffusion image to the anatomical image, we can take the inverse of the transformation matrix to do the opposite - i.e., coregister the anatomical image to the diffusion image:</p>
+<div class="highlight"><pre><span></span><code>mrtransform 5tt_nocoreg.mif -linear diff2struct_mrtrix.txt -inverse 5tt_coreg.mif
+</code></pre></div>
+<p>The resulting file, “5tt_coreg.mif”, can be loaded into <code>mrview</code> in order to examine the quality of the coregistration:</p>
+<div class="highlight"><pre><span></span><code>mrview subID_den_preproc_unbiased.mif -overlay.load 5tt_nocoreg.mif -overlay.colourmap 2 -overlay.load 5tt_coreg.mif -overlay.colourmap 1
+</code></pre></div>
+<p>The “overlay.colourmap” options specify different color codes for each image that is loaded. In this case, the boundaries before coregistration will be depicted in blue, and the boundaries after coregistration will be shown in red. The change might be slight but makes a big differences for later analysis steps.</p>
+<h3 id="create-seed-boundaries">Create seed boundaries</h3>
+<p>The last step to create the “seed” boundary - the boundary separating the grey from the white matter, which we will use to create the seeds for our streamlines - is created with the command <code>5tt2gmwmi</code> (which stands for “5 Tissue Type (segmentation) to Grey Matter / White Matter Interface)</p>
+<div class="highlight"><pre><span></span><code>5tt2gmwmi 5tt_coreg.mif gmwmSeed_coreg.mif
+</code></pre></div>
+<p>Again, we will check the result with <code>mrview</code> to make sure the interface is where we think it should be:</p>
+<div class="highlight"><pre><span></span><code>mrview subID_den_preproc_unbiased.mif -overlay.load gmwmSeed_coreg.mif
+</code></pre></div>
+<h2 id="streamlines">Streamlines</h2>
+<h3 id="anatomically-constrained-tractography">Anatomically Constrained Tractography</h3>
+<p>One of MRtrix’s features is <strong>Anatomically Constrained Tractography</strong>, or ACT. This method will only determine that a streamline is valid if it is biologically plausible. For example, a streamline that terminates in the cerebrospinal fluid will be discarded, since white matter tracts tend to both originate and terminate in grey matter. In other words, the streamlines will be constrained to the white matter. Anatomically constrained tractography isn’t a separate preprocessing step, but rather an option that can be included with the command <code>tckgen</code>, which generates the actual streamlines.</p>
+<h4 id="generating-streamlines-with-tckgen">Generating Streamlines with tckgen</h4>
+<p>MRtrix is able to do both <strong>deterministic</strong> and <strong>probabilistic</strong> tractography. In deterministic tractography, the direction of the streamline at each voxel is determined based on the predominant fiber orientation; in other words, the streamline is determined by a single parameter. MRtrix includes multiple options to do this type of deterministic tractography, such as <code>FACT</code> or <code>tensor_det</code>.</p>
+<p>The other method, probabilistic tractography, is the default in MRtrix. In this approach, multiple streamlines are generated from seed regions all along the boundary between the grey matter and white matter. The direction of the streamline will most likely follow the predominant fiber orientation density, but not always; due to a large number of samples, some streamlines will follow other directions. This becomes less likely if the FOD is extremely strong in one direction - for example, the FODs within a structure such as the corpus callosum will tend to all be aligned left-to-right - but the sampling becomes more diverse in regions that do not have a predominant fiber orientation.</p>
+<p>The default method is to use an algorithm known as iFOD2, which will use a probabilistic streamline approach. Other algorithms can be found at <a href="https://mrtrix.readthedocs.io/en/latest/reference/commands/tckgen.html">this site</a>. We will use the default of iFOD2.</p>
+<h4 id="how-many-streamlines">How Many Streamlines?</h4>
+<p>There is a trade-off between the number of generated streamlines and the amount of time that it takes. More streamlines result in a more accurate reconstruction of the underlying white-matter tracts, but estimating a large number of them can take a prohibitively long time.</p>
+<p>The “correct” number of streamlines to use is still being debated, but at least <mark>10 million</mark> or so should be a good starting place:</p>
+<div class="highlight"><pre><span></span><code>tckgen -act 5tt_coreg.mif -backtrack -seed_gmwmi gmwmSeed_coreg.mif -nthreads 8 -maxlength 250 -cutoff 0.06 -select 10000000 wmfod_ss3t_norm.mif tracks_10M.tck
+</code></pre></div>
+<p>In this command, </p>
+<table>
+<thead>
+<tr>
+<th>-act</th>
+<th>specifies that we will use the anatomically-segmented image to constrain our analysis to the white matter.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-backtrack</td>
+<td>indicates for the current streamline to go back and run the same streamline again if it terminates in a strange place (e.g., the cerebrospinal fluid).</td>
+</tr>
+<tr>
+<td>-maxlength</td>
+<td>sets the maximum tract length, in voxels, that will be permitted; <br>and “-cutoff” specifies the FOD amplitude for terminating a tract (for example, a value of 0.06 would not permit a streamline to go along an FOD that is lower than that number).</td>
+</tr>
+<tr>
+<td>-seed_gmwmi</td>
+<td>takes as an input the grey-matter / white-matter boundary that was generated using the <code>5tt2gmwmi</code> command.</td>
+</tr>
+<tr>
+<td>-nthreads</td>
+<td>specifies the number of processing cores you wish to use, in order to speed up the analysis.</td>
+</tr>
+<tr>
+<td>-select</td>
+<td>indicates how many total streamlines to generate. Note that a shorthand can be used if you like; instead of, say, 10000000, you can rewrite it as 10000k (meaning “ten thousand thousands”, which equals “ten million”).</td>
+</tr>
+<tr>
+<td>last two arguments</td>
+<td>The last two arguments specify both the input (<code>wmfod_norm.mif</code>) and a label for the output (<code>tracks_10M.tck</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>If you want to visualize the output, extract a subset of the output by using <code>tckedit</code>:</p>
+<div class="highlight"><pre><span></span><code>tckedit tracks_10M.tck -number 200k smallerTracks_200k.tck
+</code></pre></div>
+<p>This can then be loaded into <code>mrview</code> by using the “-tractography.load” option, which will automatically overlay the smallerTracks_200k.tck file onto the preprocessed diffusion-weighted image:</p>
+<div class="highlight"><pre><span></span><code>mrview subID_den_preproc_unbiased.mif -tractography.load smallerTracks_200k.tck
+</code></pre></div>
+<p>The streamlines should be constrained to the white matter, and they should be color-coded appropriately. For example, the corpus callosum should be mostly red, and the corona radiata should be mostly blue.</p>
+<h4 id="refining-the-streamlines">Refining the streamlines</h4>
+<p>Although we have created a diffusion image with reasonable streamlines, also known as a <strong>tractogram</strong>, we still have a problem with some of the white matter tracts being over-fitted, and others being under-fitted. This can be addressed with the <code>tcksift2</code> command.</p>
+<p>The reason is that some tracts will be threaded with more streamlines than others, because the fiber orientation densities are much clearer and more attractive candidates for the probabilistic sampling algorithm that was discussed above. In other words, certain tracts can be over-represented by the amount of streamlines that pass through them not necessarily because they contain more fibers, but because the fibers tend to all be orientated in the same direction.</p>
+<p>To counter-balance this overfitting, the command <code>tcksift2</code> will create a text file containing weights for each voxel in the brain:</p>
+<div class="highlight"><pre><span></span><code>tcksift2 -act 5tt_coreg.mif -out_mu sift_mu.txt -out_coeffs sift_coeffs.txt -nthreads 8 tracks_10M.tck wmfod_ss3t_norm.mif sift_1M.txt
+</code></pre></div>
+<p>The output from the command, “sift_1M.txt”, can be used with the command <code>tck2connectome</code> to create a matrix of how much each ROI is connected with every other ROI in the brain - a figure known as a <strong>connectome</strong> - which will weight each ROI. </p>
+<h2 id="creating-and-viewing-the-connectome">Creating and Viewing the Connectome</h2>
+<p>We can create a <strong>connectome</strong> that represents the number of streamlines connecting different parts of the brain. To do that, we have to first parcellate the brain into different regions, or nodes. One way to do this is by using an <strong>atlas</strong>, which assigns each voxel in the brain to a specific ROI.</p>
+<p>We will be using the atlases that come with <a href="https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_11_ROIAnalysis.html#fs-11-roianalysis">FreeSurfer</a>. Accordingly, our first step will be to run the subject’s anatomical image through recon-all, which you can read more about <a href="https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_03_ReconAll.html#fs-03-reconall">here</a>:</p>
+<div class="highlight"><pre><span></span><code>module load freesurfer
+recon-all -i anat_orig.nii.gz -s subID_recon -all
+</code></pre></div>
+<p>We can also use the T1.nii we generated earlier through anat-Orign.nii.gz for this step instead.</p>
+<div class="highlight"><pre><span></span><code>recon-all -i T1.nii -s subID_recon -all
+</code></pre></div>
+<p>This will take a few hours (4.425 hours!), depending on the speed of your computer. When it has finished, make sure to check the output by using the QA procedures described in <a href="https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_12_FailureModes.html#fs-12-failuremodes">this chapter</a>.</p>
+<h3 id="creating-the-connectome">Creating the Connectome</h3>
+<p>When recon-all has finished, we will need to convert the labels of the FreeSurfer parcellation to a format that MRtrix understands. The command <code>labelconvert</code> will use the parcellation and segmentation output of FreeSurfer to create a new parcellated file in .mif format:</p>
+<p>Define freesurfer and mrtrix_home path to make the code generic.</p>
+<p>$FREESURFER_HOME='/app/apps/rhel8/freesurfer/7.1.1'<br />
+$MRTRIX_HOME='/app/apps/rhel8/mrtrix/3.0.4'</p>
+<div class="highlight"><pre><span></span><code>labelconvert ../subjects/subID_recon_all/mri/aparc+aseg.mgz $FREESURFER_HOME/FreeSurferColorLUT.txt $MRTRIX_HOME/share/mrtrix3/labelconvert/fs_default.txt subID_parcels.mif
+</code></pre></div>
+<p>We then need to create a whole-brain connectome, representing the streamlines between each parcellation pair in the atlas (in this case, 84x84). </p>
+<table>
+<thead>
+<tr>
+<th>symmetric</th>
+<th>option will make the lower diagonal the same as the upper diagonal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scale_invnodevol</td>
+<td>option will scale the connectome by the inverse of the size of the node.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>tck2connectome -symmetric -zero_diagonal -scale_invnodevol -tck_weights_in sift_1M.txt tracks_1M.tck subID_parcels.mif subID_parcels.csv -out_assignment assignments_subID_parcels.csv
+</code></pre></div>
+<p>Used tracks_10M.tck ?? is that wrong ?? no tracks_1M.tck file available</p>
+<h3 id="viewing-the-connectome">Viewing the Connectome</h3>
+<p>Once you have created the <code>parcels.csv</code> file, you can view it as a matrix in <code>Matlab</code>. First, you will need to import it:</p>
+<div class="highlight"><pre><span></span><code>module load MATLAB/R2021a
+
+connectome = importdata(&#39;NF130_1_parcels.csv&#39;);
+</code></pre></div>
+<p>And then you will need to view it as a scaled image, so that higher structural connectivity pairs are brighter:</p>
+<div class="highlight"><pre><span></span><code>imagesc(connectome);
+</code></pre></div>
+<p>![[Pasted image 20240420093515.png]]</p>
+<p>The most noticeable feature is a division of the figure into two distinct “boxes”, representing increased structural connectivity within each hemisphere. You will also observe a relatively brighter line traced along the diagonal, representing higher structural connectivity between nearby nodes. Brighter boxes in the opposing bottom-left and upper-right corners represent increased structural connectivity between homologous regions.</p>
+<p>To make these associations more obvious, you can change the scaling of the color map:</p>
+<div class="highlight"><pre><span></span><code>imagesc(connectome, [0 1]);
+</code></pre></div>
+<p>![[Pasted image 20240420093550.png]]</p>
+<h3 id="generating-roi-based-tractography">Generating ROI based tractography</h3>
+<p>To figure out the ROI look at fs_default.txt in MTRIX folder that was used in the label-convert step:</p>
+<p><code>cat $MRTRIX_HOME/share/mrtrix3/labelconvert/fs_default.txt</code></p>
+<p>For IFG:</p>
+<div class="highlight"><pre><span></span><code>connectome2tck -nodes 17 tracks_10M.tck assignments_NF130_1_parcels.csv -files per_node LeftParsopecularis
+mrview 5tt_coreg.mif -tractography.load LeftParsopecularis17.tck
+</code></pre></div>
+<p>Initially, using MSMT --&gt; here were reduced tract density and many tracts were missing</p>
+<p>![[Pasted image 20240421213931.png]]![[Pasted image 20240421214004.png]]
+![[Pasted image 20240421214013.png]]
+Using SH3T --&gt; the results were much better (more fibers reaching the posterior auditory/parietal regions)</p>
+<p>1Mtracks</p>
+<p>![[Pasted image 20240422173655.png]]
+![[Pasted image 20240422173637.png]]</p>
+<p>![[Pasted image 20240422173612.png]]</p>
+<p>10Mtracks
+![[Pasted image 20240422173937.png]]
+![[Pasted image 20240422173905.png]]</p>
+<p>![[Pasted image 20240422173845.png]]</p>
+<p>Go back and generate the 1M track version all the way from <code>tckgen</code> step if you want to use a different number of tracks for the process. For viewing, you can always reduce to 200k tracks using <code>tckedit</code>. </p>
+<div class="highlight"><pre><span></span><code>tckgen -act 5tt_coreg.mif -backtrack -seed_gmwmi gmwmSeed_coreg.mif -nthreads 8 -maxlength 250 -cutoff 0.06 -select 1000000 wmfod_ss3t.mif tracks_1M.tck
+
+tckedit tracks_1M.tck -number 200k smallerTracks_200k.tck
+
+mrview NF130_1_dwi_den_preproc.mif -tractography.load smallerTracks_200k.tck
+
+tcksift2 -act 5tt_coreg.mif -out_mu sift_mu.txt -out_coeffs sift_coeffs.txt -nthreads 8 tracks_1M.tck wmfod_norm.mif sift_1M.txt
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code>tck2connectome -symmetric -zero_diagonal -scale_invnodevol -tck_weights_in sift_1M.txt tracks_1M.tck NF101_1_parcels.mif NF101_1_parcels_1Mtrack.csv -out_assignment assignments_NF101_1_parcels_1Mtrack.csv
+</code></pre></div>
+<h3 id="comparing-different-track-densities-and-single-shell-multi-shell-methods">Comparing different track densities and single shell multi shell methods</h3>
+<p>MMMT</p>
+<p>Initially, using MSMT --&gt; here were reduced tract density and many tracts were missing</p>
+<p>1M tracks
+![[Pasted image 20240421213931.png]]</p>
+<p>SS3T
+1Mtracks</p>
+<p>![[Pasted image 20240422173655.png]]</p>
+<p>10Mtracks
+![[Pasted image 20240422173937.png]]</p>
+<h3 id="subcortical-segmentations">Subcortical segmentations</h3>
+<p>Freesurfer V3 provides more detailed subcortical segmentations (run time 11 hours)</p>
+<p>https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferVersion3</p>
+<p>In automatic subcortical segmentation, each voxel in the normalized brain volume is assigned one of about 40 labels, including:</p>
+<ul>
+<li>Cerebral White Matter, Cerebral Cortex, Lateral Ventricle, Inferior Lateral Ventricle, Cerebellum White Matter, Cerebellum Cortex, Thalamus, Caudate, Putamen, Pallidum, Hippocampus, Amygdala, Lesion, Accumbens area, Vessel, Third Ventricle, Fourth Ventricle, Brain Stem, Cerebrospinal Fluid</li>
+</ul>
+<p><a href="https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurfer">FreeSurfer</a> now runs automated labeling of the brain volume and this is included in the stable v3.0 release, <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllDevTable">during the -autorecon2 stage</a>. However, if you processed your anatomical data using previous versions and you wish to obtain the automated labels, you can just run the subcortical segmentation separately.</p>
+<p>To obtain automatically segmented volumes for the first time (assuming the <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllDevTable">-autorecon1 stage</a> has completed), run:</p>
+<p>Make sure <code>$SUBJECT_DIR</code> is set accordingly 
+<code>SUBJECTS_DIR='/nfs/corenfs/psych-mercury-data/Data/DTI/subjects'</code>
+`recon-all -subcortseg -subjid <subject name>'</p>
+<p><code>recon-all -subcortseg -subjid ../NF130_1_recon</code></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Ventrolateral thalamus --&gt; also check Frank's model
+For basal ganglia thalamo cortical loop
+</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="generating-batch-scripts">Generating batch scripts</h3>
+<p>For now, we will do this for a single subject. The scripts will be written in four parts:</p>
+<ol>
+<li>
+<p>The first script will perform all of the preprocessing, from denoising to <code>tcksift2</code>;</p>
+</li>
+<li>
+<p>The second script will perform QA checks for each of the major preprocessing outputs;</p>
+</li>
+<li>
+<p>The third script will preprocess the structural images using <code>recon-all</code>; and</p>
+</li>
+<li>
+<p>The last script will create the connectome.</p>
+</li>
+</ol>
+<p><code>recon-all</code> isn’t part of the MRtrix pipeline <em>per se</em> - you can use any atlas you want, and you are not restricted to FreeSurfer - but we will include it as a prerequisite for creating the connectome.</p>
+<p>[[batch script (Based on Andy's scripts) - modified]]</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+mrconvert dti.nii DTI.mif -fslgrad NF101_1.bvecs NF101_1.bvals
+dwidenoise DTI.mif DTI_den.mif -noise DTI_noise.mif
+mrcalc DTI.mif DTI_den.mif -subtract DTI_residual.mif
+mrview DTI_residual.mif
+dwifslpreproc DTI_den.mif DTI_den_preproc.mif -nocleanup -pe_dir PA -rpe_none -eddy_options &quot; --slm=linear&quot;
+mrview DTI_den_preproc.mif
+dwi2mask DTI_den_preproc.mif DTI_mask.mif
+mrview DTI_mask.mif 
+dwi2response dhollander DTI_den_preproc.mif -voxels voxels.mif wm.txt gm.txt csf.txt
+shview wm.txt
+shview gm.txt
+shview csf.txt
+dwi2fod msmt_csd DTI_den_preproc.mif -mask DTI_mask.mif wm.txt wmfod.mif gm.txt gmfod.mif csf.txt csffod.mif
+mrconvert -coord 3 0 wmfod.mif - | mrcat csffod.mif gmfod.mif - vf.mif
+mrview vf.mif -odf.load_sh wmfod.mif
+
+mrconvert T1.nii T1.mif
+5ttgen fsl T1.mif 5tt_nocoreg.mif
+mrview 5tt_nocoreg.mif
+
+dwiextract DTI_den_preproc.mif - -bzero | mrmath - mean mean_b0.mif -axis 3
+mrconvert mean_b0.mif mean_b0.nii.gz
+mrconvert 5tt_nocoreg.mif 5tt_nocoreg.nii.gz
+fslroi 5tt_nocoreg.nii.gz 5tt_vol0.nii.gz 0 1
+flirt -in mean_b0.nii.gz -ref 5tt_vol0.nii.gz -interp nearestneighbour -dof 6 -omat diff2struct_fsl.mat
+transformconvert diff2struct_fsl.mat mean_b0.nii.gz 5tt_nocoreg.nii.gz flirt_import diff2struct_mrtrix.txt
+mrtransform 5tt_nocoreg.mif -linear diff2struct_mrtrix.txt -inverse 5tt_coreg.mif
+mrview DTI_den_preproc.mif -overlay.load 5tt_nocoreg.mif -overlay.colourmap 2 -overlay.load 5tt_coreg.mif -overlay.colourmap 1
+5tt2gmwmi 5tt_coreg.mif gmwmSeed_coreg.mif
+mrview DTI_den_preproc.mif -overlay.load gmwmSeed_coreg.mif
+
+tckgen -act 5tt_coreg.mif -backtrack -seed_gmwmi gmwmSeed_coreg.mif -nthreads 8 -maxlength 250 -cutoff 0.06 -select 1000000 wmfod.mif tracks_1M.tck
+tckedit tracks_1M.tck -number 200k smallerTracks_200k.tck
+mrview DTI_den_preproc.mif -tractography.load smallerTracks_200k.tck
+
+tcksift2 -act 5tt_coreg.mif -out_mu sift_mu.txt -out_coeffs sift_coeffs.txt -nthreads 8 tracks_1M.tck wmfod_norm.mif sift_1M.txt
+
+recon-all -i T1.nii -s sub-NF101_1_recon -all
+
+labelconvert aparc+aseg.mgz $FREESURFER_HOME/FreeSurferColorLUT.txt /app/apps/rhel8/mrtrix/3.0.4/share/mrtrix3/labelconvert/fs_default.txt NF101_1_parcels.mif
+
+tck2connectome -symmetric -zero_diagonal -scale_invnodevol -tck_weights_in sift_1M.txt tracks_1M.tck NF101_1_parcels.mif NF101_1_parcels.csv -out_assignment assignments_NF101_1_parcels.csv
+</code></pre></div>
+<p>Matlab commands
+connectome = importdata('NF101_1_parcels.csv');</p>
+<h3 id="code-to-select-rois-and-seeds-of-interest">Code to select ROIs and seeds of interest</h3>
+<p>mrcalc NF101_1_parcels.mif 38 -eq L_PU.mif
+mrcalc NF101_1_parcels.mif 45 -eq R-PU.mif</p>
+<p>connectome2tck -nodes 38,45 -exclusive tracks_1M.tck assignments_NF101_1_parcels.csv moto
+mrview 5tt_coreg.mif -tractography.load moto38-45.tck</p>
+<p>connectome2tck -nodes 36,38 -exclusive tracks_1M.tck assignments_NF101_1_parcels.csv moto</p>
+<p>mrview 5tt_coreg.mif -tractography.load moto36-38.tck</p>
+<p>connectome2tck -nodes 37,23 tracks_1M.tck assignments_NF101_1_parcels.csv -files per_node LeftCaudate
+mrview 5tt_coreg.mif -tractography.load LeftCaudate23.tck    </p>
+<p>LeftCaudate37.tck  </p>
+<p>less $FREESURFER_HOME/FreeSurferColorLUT.txt</p>
+<p>freeview -v 004/mri/orig.mgz \
+004/mri/aparc+aseg.mgz:colormap=lut:opacity=0.4 \
+-f 004/surf/lh.white:annot=aparc.annot</p>
+<p>freeview -v mri/orig.mgz \
+mri/aparc+aseg.mgz:colormap=lut:opacity=0.4 \
+-f surf/lh.white:annot=aparc.annot</p>
+<p>connectome2tck -nodes 17 tracks_1M.tck assignments_NF101_1_parcels.csv -files per_node LeftParsopecularis
+mrview 5tt_coreg.mif -tractography.load LeftParsopecularis17.tck    </p>
+<p>Generating stramlines that arandomly seeded from a mask ROI to the rest of the brain</p>
+<p>**  </p>
+<p>tckgen -seed_image mask_Left_Cluster1.mif tracks_1M.tck output_Left-Cluster1.tck</p>
+<p>**</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
