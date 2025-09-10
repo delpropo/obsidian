@@ -1,7 +1,9 @@
 site_name: AI Information
-site_url: https://delpropo.github.io/obsidian/
-repo_url: https://github.com/delpropo/obsidian
+site_url: https://delpropo.github.io/obsidian/work/AI
+repo_url: https://github.com/delpropo/obsidian/work/AI
 repo_name: delpropo/obsidian
+
+docs_dir: docs
 
 theme:
   name: material
@@ -32,7 +34,17 @@ theme:
 
 nav:
   - Home: index.md
-  - About: about.md
+  - Getting Started: getting-started.md
+  - Configuration:
+    - Bashrc Setup: bashrc.md
+    - File Locations: file_location_yaml_prompt.md
+  - AI Resources:
+    - LLM Information: llm_info.md
+    - Considerations: Considerations.md
+  - Development:
+    - Mercury Shell Scripting: mercury_shell_scripting.md
+  - Planning:
+    - Transition Plan: transition_plan.md
 
 markdown_extensions:
   - pymdownx.highlight:
